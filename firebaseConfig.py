@@ -1,5 +1,62 @@
 import pyrebase
 
+
+Destination = {
+    "Address" : str,
+    "City" : str,
+    "Description" : str,
+    "DestinationId" : int,
+    "Image" : str,
+    "Name" : str
+}
+Package = {
+    "Date" : str,
+    "DestinationId" : int,
+    "NoOfDay" : int,
+    "NoOfMember" : int,
+    "PackageId" : int,
+    "Price" : int,
+    "ResortId" : int,
+    "RoomIds" : list(),
+    "UserId" : str
+}
+Resort = {
+    "Address" : str,
+    "Description" : str,
+    "DestinationId" : int,
+    "Images" : list(),
+    "IsAvailable" : str,
+    "IsMeal" : str,
+    "Name" : str,
+    "ResortId" : int
+}
+Room = {
+    "AC" : str,
+    "Description" : str,
+    "Images" : list(),
+    "Price" : int,
+    "ResortId" : int,
+    "RoomId" : int,
+    "Type" : str
+}
+User = {
+    "Email" : str,
+    "FirstName" : str,
+    "LastName" : str,
+    "Mobile" : int,
+    "Password" : str,
+    "Role" : str,
+    "UserId" : str
+}
+
+Database = {
+    "Destinations" : list(Destination),
+    "Package" : list(Package),
+    "Resorts" : list(Resort),
+    "Room" : list(Room),
+    "User" :list(User)
+}
+
 config = {
     "apiKey": "AIzaSyCbEdFDC81kMdg9f5_mdERirEn1ZkN4aFE",
     "authDomain": "divineholidaypackage.firebaseapp.com",
@@ -11,4 +68,4 @@ config = {
 }
 firebase = pyrebase.initialize_app(config)
 authe = firebase.auth()
-database = firebase.database()
+database : Database  = firebase.database()

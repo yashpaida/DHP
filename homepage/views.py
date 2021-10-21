@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from firebaseConfig import database
+from firebaseConfig import database, Destination, Resort
 
 def index(request, template="homepage.html"):
     id = database.child("Users").child("0").child("UserId").get().val()
@@ -18,4 +18,7 @@ def index(request, template="homepage.html"):
         "role": role,
     }
 
-    return render(request, template, data)
+    Destinations : Destination  = database.child("Destinations").get().val()
+    Resorts : Resort = database.child("Resorts").get().val()
+
+    return render(request, template, {"Destinations": Destinations, "Resorts" : Resorts} )

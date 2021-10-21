@@ -10,6 +10,7 @@
 <html class="no-js"  lang="en">
 
 	<head>
+		
 		<!-- META DATA -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -82,7 +83,8 @@
 						<div class="col-sm-2">
 							<div class="logo">
 								<a href="home">
-									Divine<span>HolidayPackage</span>
+									Divine<span>Holiday</span>
+									<!-- Divine<span>HolidayPackage</span> -->
 								</a>
 							</div><!-- /.logo-->
 						</div><!-- /.col-->
@@ -103,8 +105,9 @@
 										<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 										<li class="smooth-menu"><a href="#blog">Contact us</a></li>
 										<li>
-											<button class="book-btn">book now
-											</button>
+										<a href="login">
+											<button class="book-btn">Log In</button>
+										</a>
 										</li><!--/.project-btn--> 
 									</ul>
 								</div><!-- /.navbar-collapse -->
@@ -129,7 +132,6 @@
 								<div class="about-us-txt">
 									<h2>
 										Explore the Beauty of the Beautiful World 
-
 									</h2>
 									<div class="about-btn">
 										<button  class="about-view">
@@ -220,7 +222,7 @@
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">
-														<h2>duration(day)</h2>
+														<h2>duration</h2>
 														<div class="travel-select-icon">
 															<select class="form-control ">
 															  	<option value="default">2</option><!-- /.option-->
@@ -303,7 +305,7 @@
 									amazing tour packages
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							<!--	<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>-->
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -311,7 +313,7 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
-								<img src="{% static 'images/service/s2.png' %}" alt="service-icon" />
+								<img src="{% static 'images/service/ws.png' %}" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 								<h2>
@@ -319,7 +321,7 @@
 										book top class hotel
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							<!--	<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>-->
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -327,16 +329,16 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="statistics-img">
-								<img src="{% static 'images/service/s3.png' %}" alt="service-icon" />
+								<img src="{% static 'images/service/43.png' %}" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 
 								<h2>
 									<a href="#">
-										online flight booking
+										Delicious Food
 									</a>
 								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
+							<!---	<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>-->
 							</div><!--/.service-content-->
 						</div><!--/.single-service-box-->
 					</div><!--/.col-->
@@ -356,87 +358,26 @@
 							top destination
 						</h2>
 						<p>
-							Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+						<!--	Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. --> 
 						</p>
 					</div><!--/.gallery-header-->
 					<div class="gallery-box">
 						<div class="gallery-content">
 						  	<div class="filtr-container">
 						  		<div class="row">
-
-						  			<div class="col-md-6">
+								{% for dest in Destinations%}
+						  			<div class="col-md-4">
 						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/goa.jpg' %}" alt="portfolio image"/>
+											<img src="{{dest.Image}}" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
-													Goa
+													{{dest.Name}}
 												</a>
-												<p><span>20 tours</span><span>15 places</span></p>
+												<p><span>{{dest.City}}</span><br><span>{{dest.Description}}</span></p>
 											</div><!-- /.item-title -->
 										</div><!-- /.filtr-item -->
 						  			</div><!-- /.col -->
-
-						  			<div class="col-md-6">
-						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/kerala.jpg' %}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													Kerala
-												</a>
-												<p><span>12 tours</span><span>9 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/manali.jpg' %}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													Manali
-												</a>
-												<p><span>25 tours</span><span>10 places</span></p>
-											</div><!-- /.item-title -->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/shimla.jpg' %}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													Shimla 
-												</a>
-												<p><span>18 tours</span><span>9 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/himachal.jpg' %}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													Himachal
-												</a>
-												<p><span>14 tours</span><span>12 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-8">
-						  				<div class="filtr-item">
-											<img src="{% static 'images/gallary/rajasthan.jpg' %}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													Rajashthan
-												</a>
-												<p><span>14 tours</span><span>6 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-
+								{%endfor%}
 						  		</div><!-- /.row -->
 
 						  	</div><!-- /.filtr-container-->
@@ -457,30 +398,24 @@
 						Hotels
 					</h2>
 					<p>
-						Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+					<!--	Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  -->
 					</p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
 					<div class="row">
-
+					<div style="height: 620px;">
+					{% for resort in Resorts%}
 						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
+							<div class="single-package-item" style="height: 570px;">
 								<img src="{% static 'images/packages/switzerland.jpg' %}" alt="package-place">
 								<div class="single-package-item-txt">
-									<h3>Switzerland <span class="pull-right">499</span></h3>
+									<h3>{{resort.Name}} <span class="pull-right">₹{{resort.BasePrice}}</span></h3>
 									<div class="packages-para">
 										<p>
 											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+												<i class="fa fa-angle-right"></i>{{resort.Description}}
 											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
 										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
 									</div><!--/.packages-para-->
 									<div class="packages-review">
 										<p>
@@ -501,201 +436,8 @@
 							</div><!--/.single-package-item-->
 
 						</div><!--/.col-->
-
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="{% static 'images/packages/england.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>england <span class="pull-right">1499</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="{% static 'images/packages/france.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>france <span class="pull-right">1199</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="{% static 'images/packages/australia.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>Australia <span class="pull-right">799</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="{% static 'images/packages/dubai.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>Dubai <span class="pull-right">999</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="{% static 'images/packages/thailand.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>thailand <span class="pull-right">799</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 daays 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
+					{% endfor %}
+					</div>
 
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
@@ -703,6 +445,232 @@
 
 		</section><!--/.packages-->
 		<!--packages end-->
+		<section   class="testemonial">
+			<div class="container">
+
+				<div class="gallary-header text-center">
+					<h2>
+						clients reviews
+					</h2>
+					<p>
+						See what our clients say about us . 
+					</p>
+
+				</div><!--/.gallery-header-->
+
+				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Malay.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+								       Amazing Experience, Realy enjoyed the journey 
+								</p>
+								<h3>
+									<a href="#">
+										Malay Modi
+									</a>
+								</h3>
+								<h4>Rajkot, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Yash.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									 Overall nice experience, hotels were really nice
+								</p>
+								<h3>
+									<a href="#">
+										Yash Paida
+									</a>
+								</h3>
+								<h4>Junagadh, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Parth.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Hotel facilities were good, Nice hotels
+								</p>
+								<h3>
+									<a href="#">
+										Parth Doshi
+									</a>
+								</h3>
+								<h4>Rajkot, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Jaydeep.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Nice Plans and schedules, Enjoyable trip
+								</p>
+								<h3>
+									<a href="#">
+										Jaydeep Josi
+									</a>
+								</h3>
+								<h4>Junagadh, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Malay.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Amazing Experience, Realy enjoyed the journey  
+								</p>
+								<h3>
+									<a href="#">
+										Malay Modi
+									</a>
+								</h3>
+								<h4>Rajkot, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Yash.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Overall nice experience, hotels were really nice
+								</p>
+								<h3>
+									<a href="#">
+										Yash Paida
+									</a>
+								</h3>
+								<h4>Junagadh, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Parth.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Hotel facilities were good, Nice hotels
+								</p>
+								<h3>
+									<a href="#">
+										Parth Doshi
+									</a>
+								</h3>
+								<h4>Rajkot, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Jaydeep.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Nice Plans and schedules, Enjoyable trip
+								</p>
+								<h3>
+									<a href="#">
+										Jaydeep Joshi
+									</a>
+								</h3>
+								<h4>Junagadh, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="{% static 'images/client/Malay.jpg' %}" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Amazing Experience, Realy enjoyed the journey. 
+								</p>
+								<h3>
+									<a href="#">
+										Malay Modi
+									</a>
+								</h3>
+								<h4>Rajkot, Gujarat</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+				</div><!--/.testemonial-carousel-->
+			</div><!--/.container-->
+
+		</section>
 
 
 		<!--special-offer start-->
@@ -745,7 +713,7 @@
 											</span>  
 										</p>
 										<p class="offer-para">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem ut labore et dolore magna  aliqua. Ut enim ad minim veniam, quis nostrud exercitation una <br> ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+											<!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem ut labore et dolore magna  aliqua. Ut enim ad minim veniam, quis nostrud exercitation una <br> ullamco laboris nisi ut aliquip ex ea commodo consequat.--> 
 										</p>
 									</div><!--/.packages-para-->
 									<div class="offer-btn-group">
@@ -771,7 +739,7 @@
 								<div class="single-special-shape-txt">
 									<h3>special offer</h3>
 									<h4><span>40%</span><br>off</h4>
-									<p><span>999</span><br>reguler  1450</p>
+									<p><span>₹9999</span><br>reguler  ₹14500</p>
 								</div><!--/.single-special-shape-txt-->
 							</div><!--/.single-special-offer-->
 						</div><!--/.col-->
