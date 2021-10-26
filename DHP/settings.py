@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
-    'login.apps.LoginConfig'
+    'login.apps.LoginConfig',
+    'manageUsers.apps.ManageusersConfig',
+    'manageDestinations.apps.ManagedestinationsConfig',
+    'manageResorts.apps.ManageresortsConfig',
 ]
 
 MIDDLEWARE = [

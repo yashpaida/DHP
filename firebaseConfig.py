@@ -1,6 +1,5 @@
 import pyrebase
 
-
 Destination = {
     "Address" : str,
     "City" : str,
@@ -49,13 +48,13 @@ User = {
     "UserId" : str
 }
 
-Database = {
-    "Destinations" : list(Destination),
-    "Package" : list(Package),
-    "Resorts" : list(Resort),
-    "Room" : list(Room),
-    "User" :list(User)
-}
+class Database(): 
+    Destinations : list(Destination)
+    Package : list(Package)
+    Resorts : list(Resort)
+    Room : list(Room)
+    User :list(User)
+
 
 config = {
     "apiKey": "AIzaSyCbEdFDC81kMdg9f5_mdERirEn1ZkN4aFE",

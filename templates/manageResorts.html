@@ -1,0 +1,309 @@
+{% load static %}
+<!doctype html>
+<html class="no-js"  lang="en">
+
+<head>
+		
+		<!-- META DATA -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+		<title>Divine</title>
+
+		<link rel="shortcut icon" type="image/icon" href="{% static 'logo/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/hover-min.css' %}">
+		<link rel="stylesheet"  href="{% static 'css/datepicker.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/bootsnav.css' %}"/>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+
+<body>
+
+	<!--Start Header -->
+		<header class="top-area">
+			<div class="header-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2">
+							<div class="logo">
+								<a href="home">
+									<span>Divine Holiday</span>
+									<!-- Divine<span>HolidayPackage</span> -->
+								</a>
+							</div><!-- /.logo-->
+						</div><!-- /.col-->
+						<div class="col-sm-10">
+							<div class="main-menu">
+							
+								<!-- Brand and toggle get grouped for better mobile display -->
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+										<i class="fa fa-bars"></i>
+									</button><!-- / button-->
+								</div><!-- /.navbar-header-->
+								<div class="collapse navbar-collapse">		  
+									<ul class="nav navbar-nav navbar-right">
+										<li>
+										<a href="login">
+											<button class="book-btn">Log In</button>
+										</a>
+										</li><!--/.project-btn--> 
+									</ul>
+								</div><!-- /.navbar-collapse -->
+							</div><!-- /.main-menu-->
+						</div><!-- /.col-->
+					</div><!-- /.row -->
+					<div class="home-border"></div><!-- /.home-border-->
+				</div><!-- /.container-->
+			</div><!-- /.header-area -->
+
+		</header><!-- /.top-area-->
+		<!--End Header -->
+
+    <!--Start User List-->
+    <section id="pack" class="packages">
+			<div class="container">
+				<div class="gallary-header text-center">
+					  <h2>
+						All Resorts List
+            </h2>
+            <p>Resort ever added in this application.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Add New Resort
+            </button>
+				</div>
+				<div class="packages-content">
+					<div class="row">
+					<div style="height: 620px;">
+            <ul class="w3-ul w3-card-4">
+            {% for Resort in Resorts%}
+              <li class="w3-bar">
+                <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+                <div class="w3-bar-item">
+                  <i class="glyphicon glyphicon-map-marker w3-bar-item w3-circle w3-hide-small"  style="font-size:25px;"></i>
+                  <span class="w3-large">{{Resort.Name}}</span><br>
+                  <span>{{Resort.City}}</span>
+                </div>
+              </li>
+              {% endfor%}
+            </ul>
+					</div>
+
+					</div><!--/.row-->
+				</div><!--/.packages-content-->
+			</div><!--/.container-->
+      <!-- Button trigger modal -->
+		</section>
+    <!--End User List-->
+
+    <!--Start footer-->
+    <section id="blog" class="blog">
+      <footer  class="footer-copyright">
+        <div class="container">
+          <div class="footer-content">
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="single-footer-item">
+                  <div class="footer-logo">
+                    <a href="home">
+                      D<span>HP</span>
+                    </a>
+                    <p>
+                      best travel agency
+                    </p>
+                  </div>
+                </div><!--/.single-footer-item-->
+              </div><!--/.col-->
+
+              <div class="col-sm-3">
+                <div class="single-footer-item">
+                  <h2>link</h2>
+                  <div class="single-footer-txt">
+                    <p><a href="#">home</a></p>
+                    <p><a href="#">destination</a></p>
+                    <p><a href="#">spacial packages</a></p>
+                    <p><a href="#">hotels</a></p>
+                    <p><a href="#">blog</a></p>
+                    <p><a href="#">contacts</a></p>
+                  </div><!--/.single-footer-txt-->
+                </div><!--/.single-footer-item-->
+
+              </div><!--/.col-->
+
+              <div class="col-sm-3">
+                <div class="single-footer-item">
+                  <h2>popular destination</h2>
+                  <div class="single-footer-txt">
+                    <p><a href="#">Goa</a></p>
+                    <p><a href="#">Kerala</a></p>
+                    <p><a href="#">Himachal </a></p>
+                    <p><a href="#">Uttarakhand</a></p>
+                    <p><a href="#">Manali</a></p>
+                  </div><!--/.single-footer-txt-->
+                </div><!--/.single-footer-item-->
+              </div><!--/.col-->
+
+              <div class="col-sm-3">
+                <div class="single-footer-item text-center">
+                  <h2 class="text-left">contacts</h2>
+                  <div class="single-footer-txt text-left">
+                    <p>+91 9876543211</p>
+                    <p class="foot-email"><a href="#">info@divineholidaypackage.com</a></p>
+                    <p>MG Road, Ahmedabad</p>
+                    <p>Gujarat, India</p>
+                  </div><!--/.single-footer-txt-->
+                </div><!--/.single-footer-item-->
+              </div><!--/.col-->
+
+            </div><!--/.row-->
+
+          </div><!--/.footer-content-->
+          <hr>
+          <div class="foot-icons ">
+            <ul class="footer-social-links list-inline list-unstyled">
+                      <li><a href="#" target="_blank" class="foot-icon-bg-1"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                
+
+              </div><!--/.foot-icons-->
+          <div id="scroll-Top">
+            <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+          </div><!--/.scroll-Top-->
+        </div><!-- /.container-->
+
+      </footer><!-- /.footer-copyright-->
+    </section><!--/.blog-->
+		<!--End footer-->
+
+
+    <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle"           aria-hidden="true" data-backdrop="false" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">Add New Resort</h3>
+            </div>
+            <div class="modal-body">
+
+              <form action="addNewResort" method="post" class="needs-validation">
+
+              {% csrf_token %}
+
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="validationTooltip01">Name</label>
+                  <input type="text" name="restName" class="form-control" id="validationTooltip01" placeholder="Name" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltipUsername">Address</label>
+                    <input type="textarea" name="restAddress" class="form-control" id="validationTooltipUsername" placeholder="Address" >
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip02">City</label>
+                  <input type="text" name="restCity" class="form-control" id="validationTooltip02" placeholder="City" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltipUsername">Select Destination</label>
+                  <select aria-label="Default select example" name="restDestId" class="form-control" id="validationTooltipUsername">
+                    <option selected>Base Price</option>
+                  {% for dest in Destinations%}
+                    <option value="{{dest.DestinationId}}">{{dest.Name}}</option>
+                  {% endfor%}
+                </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip02">Base Price</label>
+                  <input type="number" name="restBasePrice" class="form-control" id="validationTooltip02" placeholder="Base Price" required>
+                </div>
+              </div>
+
+                <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltipUsername">Is Meal</label>
+                  <select aria-label="Default select example" name="restIsMeal" class="form-control" id="validationTooltipUsername">
+                    <option selected>Meal</option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="validationTooltip02">Is Available</label>
+                  <select aria-label="Default select example" name="restIsAvail" class="form-control" id="validationTooltipUsername">
+                    <option selected>Available</option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>                
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="validationTooltip03">Description</label>
+                  <input type="text" name="restDescription" class="form-control" id="validationTooltip03" placeholder="Description" required>
+                </div>
+              </div>
+              <button name="submit" class="btn btn-primary" type="submit">Add Resort</button>
+            </form>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+		<script src="{% static 'js/jquery.js' %}"></script>
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		<script  src="{% static 'js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/bootsnav.js' %}"></script>
+		<script src="{% static 'js/jquery.filterizr.min.js' %}"></script>
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+		<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+		<script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script  src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script  src="{% static 'js/datepicker.js' %}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

@@ -8,5 +8,8 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('home/', include('homepage.urls')),
     path('login/', include('login.urls')),
+    path('manageUsers/', include('manageUsers.urls')),
+    path('manageDestinations/',include('manageDestinations.urls')),
+    path('manageResorts/',include('manageResorts.urls')),
     path('admin/', admin.site.urls),
 ]

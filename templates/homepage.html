@@ -83,8 +83,7 @@
 						<div class="col-sm-2">
 							<div class="logo">
 								<a href="home">
-									Divine<span>Holiday</span>
-									<!-- Divine<span>HolidayPackage</span> -->
+									Divine<span>HolidayPackage</span>
 								</a>
 							</div><!-- /.logo-->
 						</div><!-- /.col-->
@@ -105,9 +104,8 @@
 										<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 										<li class="smooth-menu"><a href="#blog">Contact us</a></li>
 										<li>
-										<a href="login">
-											<button class="book-btn">Log In</button>
-										</a>
+											<button class="book-btn">book now
+											</button>
 										</li><!--/.project-btn--> 
 									</ul>
 								</div><!-- /.navbar-collapse -->
@@ -132,6 +130,7 @@
 								<div class="about-us-txt">
 									<h2>
 										Explore the Beauty of the Beautiful World 
+
 									</h2>
 									<div class="about-btn">
 										<button  class="about-view">
@@ -291,9 +290,7 @@
         <!--service start-->
 		<section id="service" class="service">
 			<div class="container">
-
 				<div class="service-counter text-center">
-
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
@@ -355,30 +352,29 @@
 				<div class="gallery-details">
 					<div class="gallary-header text-center">
 						<h2>
-							top destination
+							Resorts
 						</h2>
 						<p>
-						<!--	Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. --> 
+							Best Hotels to make your vacation special
 						</p>
 					</div><!--/.gallery-header-->
-					<div class="gallery-box">
-						<div class="gallery-content">
-						  	<div class="filtr-container">
-						  		<div class="row">
-								{% for dest in Destinations%}
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="{{dest.Image}}" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													{{dest.Name}}
-												</a>
-												<p><span>{{dest.City}}</span><br><span>{{dest.Description}}</span></p>
-											</div><!-- /.item-title -->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-								{%endfor%}
-						  		</div><!-- /.row -->
+					{% for resort in Resorts%}
+					<div class="col-md-4 col-sm-6">
+						<div class="single-package-item " style="height: 450px;">
+							<img src="{{resort.Image}}" alt="package-place">
+							<div class="single-package-item-txt ">
+								<h3 style="color: #3A3B3C;">{{resort.Name}} </h3>
+								<div class="packages-para">
+									<p>
+										<h3 style="color: #00BFFF;">Starting with ₹{{resort.BasePrice}}</h3>
+									</p>
+							</div><!--/.single-package-item-txt-->
+						</div><!--/.single-package-item-->
+					</div><!--/.col-->
+				</div>
+					{% endfor %}
+				</div>
+			</div>
 
 						  	</div><!-- /.filtr-container-->
 						</div><!-- /.gallery-content -->
@@ -389,56 +385,34 @@
 		</section><!--/.gallery-->
 		<!--gallery end-->
 
-
 		<!--packages start-->
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
 					<h2>
-						Hotels
+						Destinations
 					</h2>
 					<p>
-					<!--	Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  -->
+						Hot Favourite Destination's
 					</p>
 				</div><!--/.gallery-header-->
-				<div class="packages-content">
-					<div class="row">
-					<div style="height: 620px;">
-					{% for resort in Resorts%}
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item" style="height: 570px;">
-								<img src="{% static 'images/packages/switzerland.jpg' %}" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>{{resort.Name}} <span class="pull-right">₹{{resort.BasePrice}}</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>{{resort.Description}}
-											</span>
-										</p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>2544 review</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-					{% endfor %}
-					</div>
-
+				{% for dest in Destinations%}
+				<div class="col-md-4 col-sm-6">
+					<div class="single-package-item " style="height: 450px;">
+						<img src="{{dest.Image}}" alt="package-place">
+						<div class="single-package-item-txt ">
+							<h3 style="color: #3A3B3C;">{{dest.Name}} </h3>
+							<div class="packages-para">
+								<p>
+										<h3 style="color: #00BFFF;">{{dest.City}}</h3>
+								</p>
+								<p><span>{{dest.Description}}</span></p>
+						</div><!--/.single-package-item-txt-->
+					</div><!--/.single-package-item-->
+				</div><!--/.col-->
+				</div>
+			{%endfor%}
+		</div>
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
