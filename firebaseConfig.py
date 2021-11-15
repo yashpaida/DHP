@@ -27,7 +27,8 @@ Resort = {
     "IsAvailable" : str,
     "IsMeal" : str,
     "Name" : str,
-    "ResortId" : int
+    "ResortId" : int,
+    "City":str
 }
 Room = {
     "AC" : str,
@@ -54,6 +55,15 @@ class Database():
     Resorts : list(Resort)
     Room : list(Room)
     User :list(User)
+
+class CurrentUser():
+    Email = None
+    FirstName = None
+    LastName = None
+    Mobile = None
+    Password = None
+    Role = None
+    UserId = None
 
 
 config = {
