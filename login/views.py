@@ -10,6 +10,7 @@ def index(request, template="login.html"):
     return render(request, template)
 
 def loginUser(request):
+  print("test")
   email = request.POST["loginEmail"]
   password = request.POST["loginPassword"]
 
@@ -28,7 +29,7 @@ def loginUser(request):
 
         print(CurrentUser.Role)
         
-        return redirect(request, "/", {"Destinations": Destinations, "Resorts" : Resorts} )
+        return render(request, "homepage.html", {"Destinations": Destinations, "Resorts" : Resorts} )
         
     else:
         print("Invalid Login")

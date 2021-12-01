@@ -1,0 +1,85 @@
+{% load static %}
+
+<html>
+	<head>
+		<meta charset="utf-8">
+        <title>Divine</title>
+
+		<link rel="shortcut icon" type="image/icon" href="{% static 'logo/favicon.png' %}"/>
+        <link rel="stylesheet" href="{% static 'css/invoice_css.css' %}">
+	</head>
+	<body>
+		<header>
+			<h1>Invoice</h1>
+			<address contenteditable>
+				<p>The Divine Holiday</p>
+				<p>Main Branch<br>Ahmedabad</p>
+				<p>(+91) 9876543210</p>
+			</address>
+		</header>
+		<article>
+			<h1>Recipient</h1>
+			<address contenteditable>
+				<div class="text-gray-light">INVOICE TO:</div>
+				<p>The Divine Holiday</p>
+			</address>
+			<table class="meta">
+				<tr>
+					<th><span contenteditable>Invoice #</span></th>
+					<td><span contenteditable>0002</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Date</span></th>
+					<td><span contenteditable>January 1, 2022</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Amount Due</span></th>
+					<td><span id="prefix" contenteditable>₹</span><span>1.00</span></td>
+				</tr>
+			</table>
+			<table class="inventory">
+				<thead>
+					<tr>
+						<th><span contenteditable>Resort</span></th>
+						<th><span contenteditable>Room</span></th>
+						<th><span contenteditable>Rate Per Day</span></th>
+						<th><span contenteditable>No Of Day</span></th>
+						<th><span contenteditable>Total Price</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><a class="cut">-</a><span contenteditable></span></td>
+						<td><span contenteditable></span></td>
+						<td><span data-prefix>₹</span><span contenteditable>1.00</span></td>
+						<td><span contenteditable>1</span></td>
+						<td><span data-prefix>₹</span><span>1.00</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<a class="add">+</a>
+			<table class="balance">
+				<tr>
+					<th><span contenteditable>Total</span></th>
+					<td><span data-prefix>₹</span><span>1.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Amount Paid</span></th>
+					<td><span data-prefix>₹</span><span contenteditable>0.00</span></td>
+				</tr>
+				<tr>
+					<th><span contenteditable>Balance Due</span></th>
+					<td><span data-prefix>₹</span><span>1.00</span></td>
+				</tr>
+			</table>
+		</article>
+		<aside>
+			<h1><span contenteditable>Additional Notes</span></h1>
+			<div contenteditable>
+				<p>A finance charge of 1.5% will be made on unpaid balances after 30 days.</p>
+			</div>
+		</aside>
+        <script src="{% static 'js/invoice_js.js' %}"></script>
+
+	</body>
+</html>

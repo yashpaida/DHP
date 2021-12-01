@@ -91,6 +91,9 @@
 											<a href="contactus" role="button">Contact us</a>
 										</li>
 										<li>
+											<a href="invoice" role="button">Generate Invoice</a>
+										</li>
+										<li>
 											<a href="login" role="button">Login</a>
 										</li>
 									</ul>
@@ -106,7 +109,7 @@
 		<!-- main-menu End -->
 
 		<!--about-us start -->
-		<section id="home" class="about-us">
+		<section id="home" class="about-us" style="background-color:black">
 			<div class="container">
 				<div class="about-us-content">
 					<div class="row">
@@ -378,7 +381,7 @@
 					{% for dest in Destinations%}
 						<div class="column">
 							<div class="single-package-item">
-								<a href="{% url 'home:package' id=dest.DestinationId rid=0%}">	
+								<a href="{% url 'home:package' id=dest.DestinationId%}">	
 								<img src="{{dest.Image}}" alt="package-place" style="width:450px; height:200px">
 								</a>
 								<div class="single-package-item-txt ">

@@ -317,7 +317,7 @@
 <br>
     <div class="cont">
         <div class="form sign-in">
-		 <form action="loginUser" method="post">
+		 <form action="{% url 'loginUser' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <h2>Welcome</h2>
             <label>
