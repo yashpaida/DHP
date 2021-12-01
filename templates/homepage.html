@@ -86,12 +86,14 @@
 										<li class="smooth-menu"><a href="#home">Home</a></li>
 										<li class="smooth-menu"><a href="#pack">Destination</a></li>
 										<li class="smooth-menu"><a href="#resorts">Resorts </a></li>
-										<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
 										<li>
 											<a href="contactus" role="button">Contact us</a>
 										</li>
 										<li>
 											<a href="invoice" role="button">Generate Invoice</a>
+										</li>
+										<li>
+											<a href="manageDestinations" role="button">Manage</a>
 										</li>
 										<li>
 											<a href="login" role="button">Login</a>
@@ -345,7 +347,7 @@
 					{% for resort in Resorts%}
 					<div class="col-md-4 col-sm-6">
 						<div class="single-package-item " style="height: 450px;">
-							<a href="Rajasthan">	
+							<a href="{% url 'home:package' id=resort.DestinationId rid=resort.ResortId%}">	
 							<img src="{{resort.Image}}" alt="package-place" style="width:450px; height:200px"></a>
 							<div class="single-package-item-txt ">
 								<h3 style="color: #3A3B3C;" >{{resort.Name}} </h3>
@@ -635,7 +637,7 @@
 						<div class="col-sm-8">
 							<div class="single-special-offer">
 								<div class="single-special-offer-txt">
-									<h2>thiland</h2>
+									<h2 style="color:white">Goa</h2>
 									<div class="packages-review special-offer-review">
 										<p>
 											<i class="fa fa-star"></i>
